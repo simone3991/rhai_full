@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/redd"
+	xmlns:tns="http://www.example.org/redd" elementFormDefault="qualified">
+
+    <complexType name="appliance">
+    	<sequence>
+    		<element name="appliance-file" type="tns:appliance-file"></element>
+    	</sequence>
+    	<attribute name="name" type="string"></attribute>
+    </complexType>
+    
+
+    <element name="redd" type="tns:root"></element>
+    
+    <complexType name="root">
+    	<sequence>
+    		<element name="appliance" type="tns:appliance"></element>
+    	</sequence>
+    </complexType>
+
+    <complexType name="appliance-file">
+    	<sequence>
+    		<element name="appliance-instance"
+    			type="tns:appliance-instance">
+    		</element>
+    	</sequence>
+    	<attribute name="path" type="string"></attribute>
+    </complexType>
+
+    <complexType name="appliance-instance">
+    	<sequence>
+    		<element name="start" type="time"></element>
+    		<element name="end" type="time"></element>
+    	</sequence>
+    	<attribute name="name" type="string"></attribute>
+    </complexType>
+</schema>

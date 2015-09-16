@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<redd:redd xmlns:redd="http://www.example.org/redd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/redd redd.xsd ">
+  <redd:appliance name="fake">
+      
+    <redd:appliance-file path="./redd_dataset/house_6/channel_5.dat">
+      <redd:appliance-instance>
+        <redd:start>1306236874</redd:start>
+        <redd:end>1306237073</redd:end>
+      </redd:appliance-instance>
+    </redd:appliance-file>
+    
+    <redd:appliance-file path="./redd_dataset/house_6/channel_3.dat">
+      <redd:appliance-instance>
+        <redd:start>1306375466</redd:start>
+        <redd:end>1306378654</redd:end>
+      </redd:appliance-instance>
+    </redd:appliance-file>
+    
+    <redd:appliance-file path="./redd_dataset/house_6/channel_10.dat">
+      <redd:appliance-instance>
+        <redd:start>1306020434</redd:start>
+        <redd:end>1306038456</redd:end>
+      </redd:appliance-instance>
+    </redd:appliance-file>
+    
+    <redd:appliance-file path="./redd_dataset/house_6/channel_15.dat">
+      <redd:appliance-instance>
+        <redd:start>1306480868</redd:start>
+        <redd:end>1306485012</redd:end>
+      </redd:appliance-instance>
+    </redd:appliance-file>
+    
+    <redd:appliance-file path="./redd_dataset/house_6/channel_12.dat">
+      <redd:appliance-instance>
+        <redd:start>1306019770</redd:start>
+        <redd:end>1306023261</redd:end>
+      </redd:appliance-instance>
+    </redd:appliance-file>
+    
+  </redd:appliance>
+</redd:redd>

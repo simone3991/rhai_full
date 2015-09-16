@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<redd:redd xmlns:redd="http://www.example.org/redd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.example.org/redd redd.xsd ">
+
+	<redd:appliance name="dishwasher">
+
+		<redd:appliance-file
+			path="./redd_dataset/house_2/channel_10.dat">
+			<redd:appliance-instance name="2_10_5">
+				<redd:start>1304215633</redd:start>
+				<redd:end>1304219041</redd:end>
+			</redd:appliance-instance>
+		</redd:appliance-file>
+
+		<redd:appliance-file
+			path="./redd_dataset/house_3/channel_9.dat">
+			<redd:appliance-instance name="3_9_5">
+				<redd:start>1306379342</redd:start>
+				<redd:end>1306383062</redd:end>
+			</redd:appliance-instance>
+		</redd:appliance-file>
+
+		<redd:appliance-file
+			path="./redd_dataset/house_4/channel_15.dat">
+			<redd:appliance-instance name="4_15_6">
+				<redd:start>1306461340</redd:start>
+				<redd:end>1306464059</redd:end>
+			</redd:appliance-instance>
+			<redd:appliance-instance name="4_15_7">
+				<redd:start>1306987076</redd:start>
+				<redd:end>1306989592</redd:end>
+			</redd:appliance-instance>
+		</redd:appliance-file>
+		
+		<redd:appliance-file
+			path="./redd_dataset/house_1/channel_6.dat">
+			<redd:appliance-instance name="1_6_1">
+				<redd:start>1303171869</redd:start>
+				<redd:end>1303179328</redd:end>
+			</redd:appliance-instance>
+			<redd:appliance-instance name="1_6_3">
+			    <redd:start>1303777922</redd:start>
+			    <redd:end>1303785266</redd:end>
+			</redd:appliance-instance>
+			<redd:appliance-instance name="1_6_5">
+				<redd:start>1303828262</redd:start>
+				<redd:end>1303833661</redd:end>
+			</redd:appliance-instance>
+			<redd:appliance-instance name="1_6_8">
+				<redd:start>1304421847</redd:start>
+				<redd:end>1304429769</redd:end>
+			</redd:appliance-instance>
+			<redd:appliance-instance name="1_6_13">
+				<redd:start>1305580623</redd:start>
+				<redd:end>1305588080</redd:end>
+			</redd:appliance-instance>
+		</redd:appliance-file>
+
+		<redd:appliance-file 
+		    path="./redd_dataset/house_5/channel_20.dat">
+		    <redd:appliance-instance name="5_20_1">
+		        <redd:start>1303170024</redd:start>
+		        <redd:end>1303173649</redd:end>
+		        </redd:appliance-instance>
+		</redd:appliance-file>
+		
+	</redd:appliance>
+	
+	<redd:appliance name="oven">
+	    
+	    <redd:appliance-file 
+	        path="./redd_dataset/house_1/channel_3.dat">
+	        <redd:appliance-instance name="1_3_7">
+	            <redd:start>1305676284</redd:start>
+	            <redd:end>1305680493</redd:end>
+	        </redd:appliance-instance>
+	    </redd:appliance-file>
+	    
+	    <redd:appliance-file
+	        path="./redd_dataset/house_1/channel_4.dat">
+	        <redd:appliance-instance name="1_4_1">
+	            <redd:start>1303166588</redd:start>
+	            <redd:end>1303168785</redd:end>
+	        </redd:appliance-instance>
+	        <redd:appliance-instance name="1_4_2">
+	            <redd:start>1303667880</redd:start>
+	            <redd:end>1303670065</redd:end>
+	        </redd:appliance-instance>
+	        <redd:appliance-instance name="1_4_3">
+	            <redd:start>1304181270</redd:start>
+	            <redd:end>1304183353</redd:end>
+	        </redd:appliance-instance>
+	        <redd:appliance-instance name="1_4_7">
+	            <redd:start>1305676284</redd:start>
+	            <redd:end>1305680493</redd:end>
+	        </redd:appliance-instance>
+	        <redd:appliance-instance name="1_4_9">
+	            <redd:start>1306189242</redd:start>
+	            <redd:end>1306192179</redd:end>
+	        </redd:appliance-instance>
+	    </redd:appliance-file>
+	    
+	</redd:appliance>
+	
+	<redd:appliance name="microwave">
+	    
+	    <redd:appliance-file 
+	        path="./redd_dataset/house_1/channel_11.dat">
+	        <redd:appliance-instance name="1_11_9">
+	            <redd:start>1303168926</redd:start>
+	            <redd:end>1303169056</redd:end>
+	        </redd:appliance-instance>
+	     	 <redd:appliance-instance name="1_11_12">
+	            <redd:start>1303212033</redd:start>
+	            <redd:end>1303212101</redd:end>
+	        	</redd:appliance-instance>
+	   	</redd:appliance-file>
+	    
+	    <redd:appliance-file 
+	        path="./redd_dataset/house_2/channel_6.dat">
+	        <redd:appliance-instance name="2_6_5">
+	            <redd:start>1303245228</redd:start>
+	            <redd:end>1303245332</redd:end>
+	            </redd:appliance-instance>
+	            <redd:appliance-instance name="2_6_6">
+	                <redd:start>1303313284</redd:start>
+	                <redd:end>1303313366</redd:end>
+	            </redd:appliance-instance>
+	            <redd:appliance-instance name="2_6_end-1">
+	                <redd:start>1304274623</redd:start>
+	                <redd:start>1304274670</redd:start>
+	            </redd:appliance-instance>
+	    </redd:appliance-file>
+	    	    
+	</redd:appliance>
+	
+	<redd:appliance name="refrigerator">
+	    
+	    <redd:appliance-file
+	        path="./redd_dataset/house_3/channel_7.dat">
+	        <redd:appliance-instance name="3_7_1">
+	            <redd:start>1302934067</redd:start>
+	            <redd:end>1302936725</redd:end>
+	        </redd:appliance-instance>
+	        <redd:appliance-instance name="3_7_2">
+	            <redd:start>1302938030</redd:start>
+	            <redd:end>1302940809</redd:end>
+	        </redd:appliance-instance>
+	        <redd:appliance-instance name="3_7_3">
+	            <redd:start>1302942245</redd:start>
+	            <redd:end>1302945074</redd:end>
+	        </redd:appliance-instance>
+	    </redd:appliance-file>
+	    
+	    <redd:appliance-file 
+	        path="./redd_dataset/house_6/channel_8.dat">
+	        <redd:appliance-instance name="6_8_1">
+	            <redd:start>1306007858</redd:start>
+	            <redd:end>1306014561</redd:end>
+	        </redd:appliance-instance>
+	        <redd:appliance-instance name="6_8_2">
+	            <redd:start>1306016852</redd:start>
+	            <redd:end>1306023275</redd:end>
+	        </redd:appliance-instance>
+	    </redd:appliance-file>
+	    
+	</redd:appliance>
+	
+	<redd:appliance name="washer dryer">
+	    
+	    <redd:appliance-file 
+	        path="./redd_dataset/house_3/channel_14.dat">
+	        <redd:appliance-instance name="3_14_1">
+	            <redd:start>1303260236</redd:start>
+	            <redd:end>1303271920</redd:end>
+	        </redd:appliance-instance>
+	        <redd:appliance-instance name="3_14_3">
+	            <redd:start>1303429357</redd:start>
+	            <redd:end>1303435016</redd:end>
+	        </redd:appliance-instance>
+	        <redd:appliance-instance name="3_14_5">
+	            <redd:start>1305690668</redd:start>
+	            <redd:end>1305693917</redd:end>
+	        </redd:appliance-instance>
+	    </redd:appliance-file>
+	    
+	    <redd:appliance-file
+	        path="./redd_dataset/house_1/channel_20.dat">
+	        <redd:appliance-instance name="1_20_4">
+	            <redd:start>1304181310</redd:start>
+	            <redd:end>1304193342</redd:end>
+	        </redd:appliance-instance>
+	        <redd:appliance-instance name="1_20_5">
+	            <redd:start>1304282736</redd:start>
+	            <redd:end>1304289838</redd:end>
+	        </redd:appliance-instance>
+	        <redd:appliance-instance name="1_20_9">
+	            <redd:start>1305340803</redd:start>
+	            <redd:end>1305344093</redd:end>
+	        </redd:appliance-instance>
+	    </redd:appliance-file>
+	    
+	    <redd:appliance-file 
+	        path="./redd_dataset/house_1/channel_10.dat">
+	        <redd:appliance-instance name="1_10_4">
+	            <redd:start>1304779533</redd:start>
+	            <redd:end>1304781124</redd:end>
+	        </redd:appliance-instance>
+	        <redd:appliance-instance name="1_10_6">
+	            <redd:start>1305338500</redd:start>
+	            <redd:end>1305342965</redd:end>
+	        </redd:appliance-instance>
+	    </redd:appliance-file>
+	</redd:appliance>
+
+</redd:redd>
