@@ -1,0 +1,312 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Rhai Complete Package by simone3991</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Rhai Complete Package</h1>
+        <p>A complete tester and validator for RHAI project</p>
+
+        <p class="view"><a href="https://github.com/simone3991/rhai_full">View the Project on GitHub <small>simone3991/rhai_full</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/simone3991/rhai_full/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/simone3991/rhai_full/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/simone3991/rhai_full">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="rhai-complete-package" class="anchor" href="#rhai-complete-package" aria-hidden="true"><span class="octicon octicon-link"></span></a>RHAI Complete Package</h1>
+
+<h3>
+<a id="about-this-file" class="anchor" href="#about-this-file" aria-hidden="true"><span class="octicon octicon-link"></span></a>About this file</h3>
+
+<p>This README is written using the Markdown standard. It can be 
+displayed as a plain text file, but you can open it in a browser
+to get an html-styled text. Everything about Markdown standard
+is available at <a href="http://daringfireball.net/projects/markdown/">http://daringfireball.net/projects/markdown/</a>.</p>
+
+<h3>
+<a id="about-rhai" class="anchor" href="#about-rhai" aria-hidden="true"><span class="octicon octicon-link"></span></a>About RHAI</h3>
+
+<p>RHAI is a Java tool developed to recognize household appliances'
+patterns while they're running, by examinating power consumption.
+Any question about this project or its usage will be welcome: 
+just mail to Simone Colucci (<a href="mailto:simone.colucci01@universitadipavia.it">simone.colucci01@universitadipavia.it</a>).</p>
+
+<h3>
+<a id="archive-organization" class="anchor" href="#archive-organization" aria-hidden="true"><span class="octicon octicon-link"></span></a>Archive organization</h3>
+
+<p>The complete package structure is represented below:</p>
+
+<ul>
+<li><p>README.md</p></li>
+<li><p>redd_dataset</p></li>
+<li>
+<p>rhai_dataset</p>
+
+<ul>
+<li>training</li>
+<li>validation</li>
+<li>fake</li>
+<li>training_creation.xml</li>
+<li>validation_creation.xml</li>
+<li>fake_creation.xml</li>
+</ul>
+</li>
+<li>
+<p>rhai_data</p>
+
+<ul>
+<li>settings
+
+<ul>
+<li>identification.properties</li>
+<li>abstraction.properties</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+<h5>
+<a id="redd_dataset" class="anchor" href="#redd_dataset" aria-hidden="true"><span class="octicon octicon-link"></span></a>redd_dataset</h5>
+
+<p>RHAI works on appliances' data files, either for training and
+execution. Though you're free to use any particular dataset, 
+we used the Reference Energy Disaggregation Dataset (REDD) to 
+test the identifier. This folder contains REDD low frequency 
+dataset (~1Hz), the one we used. For further informations about 
+REDD conventions and data meaning, please refer to its documentation,
+at <a href="http://redd.csail.mit.edu/readme.txt">http://redd.csail.mit.edu/readme.txt</a>.</p>
+
+<h5>
+<a id="rhai_dataset" class="anchor" href="#rhai_dataset" aria-hidden="true"><span class="octicon octicon-link"></span></a>rhai_dataset</h5>
+
+<p>RHAI works on appliances data files. Theese files must be inside
+one of theese three folders, depending of their purpose:</p>
+
+<ul>
+<li><p>training: to teach the algorithm what shape appliances have</p></li>
+<li><p>validation: to analyze overall identification performance</p></li>
+<li><p>fake: to teach the algorithm not to recognize anything while 
+reading meaningless data files</p></li>
+</ul>
+
+<p>In addition to theese directories, rhai_dataset contains other four 
+files, whose meaning are shown in the proper section:</p>
+
+<ul>
+<li><p>training_creator.xml</p></li>
+<li><p>validation_creator.xml</p></li>
+<li><p>fake_creator.xml</p></li>
+<li><p>redd.xsd</p></li>
+</ul>
+
+<p>This package comes with an example dataset, it's up to you to 
+build a more complete one.</p>
+
+<h5>
+<a id="rhai_data" class="anchor" href="#rhai_data" aria-hidden="true"><span class="octicon octicon-link"></span></a>rhai_data</h5>
+
+<p>This folder contains every data file that let RHAI run. You generally 
+need not change the content of this folder, with two exceptions, 
+described in the dedicated section.</p>
+
+<h3>
+<a id="dataset-creation-using-redd" class="anchor" href="#dataset-creation-using-redd" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dataset creation using REDD</h3>
+
+<p>A RHAI data file must start when the appliance starts and end when 
+it ends. So, if you want to use the REDD as a source of data, as we 
+did, you need to convert the informations from REDD standard to RHAI. 
+To accomplish this, you use the bin/dataset_creator.jar routine, like:</p>
+
+<pre><code>java -jar bin/dataset_creator.jar $xml-file $target-directory
+</code></pre>
+
+<p>where</p>
+
+<ul>
+<li><p>$xml-file is one of the .xml files of rhai_dataset, and is used to 
+tell the process how to create the dataset</p></li>
+<li><p>$target-directory is one of the folders of rhai_dataset</p></li>
+</ul>
+
+<p>Through the .xml files you can define the building process of your dataset.
+You need to determine which REDD files are to be used, and how to extract 
+single appliances instance from that file (starting and ending time). The
+schema of such .xml is saved in ./rhai_dataset/redd.xsd and it's:</p>
+
+<pre><code>&lt;redd:appliance name="appliance_name"&gt;
+    &lt;redd: appliance-file path="redd_file_path"&gt;
+        &lt;redd:appliance-instance name="optional"&gt;
+            &lt;redd:start&gt; $start &lt;/redd:start&gt;
+            &lt;redd:end&gt; $end &lt;/redd:end&gt;
+        &lt;/redd:appliance-instance&gt;
+    &lt;/redd: appliance-file
+&lt;/redd:appliance&gt;   
+</code></pre>
+
+<p>You may have many instances for each file, many files for each appliance,
+and many appliances as you want in your .xml file. For each instance, you 
+must insert two variables, taken from the REDD file:</p>
+
+<ul>
+<li><p>$start: the timestamp when the appliance starts</p></li>
+<li><p>$end: the timestamp when the appliance ends</p></li>
+</ul>
+
+<p>The timestamp is represented under POSIX convention and counts the
+seconds since Epoch (Jenuary 1st, 1970), and can be read from REDD.
+Each REDD file indeed consists in lines like</p>
+
+<pre><code>$timestamp      $power_consumption
+</code></pre>
+
+<p>Once you finished the .xml file, you can build your RHAI dataset.</p>
+
+<h3>
+<a id="dataset-creation-from-other-sources" class="anchor" href="#dataset-creation-from-other-sources" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dataset creation from other sources</h3>
+
+<p>You simply have to put folders in the dataset directory (let's say, 
+for example, ./rhai_dataset/validation), and name each folder as the
+appliance it represents. In the folder, put one or many .dat files. 
+Each file must represent the power consumption of the appliance since
+it turns on till the very ending, and must be composed of such lines:</p>
+
+<pre><code>$day/$month/$year $hour:$min:$sec   $power_consumption
+</code></pre>
+
+<h3>
+<a id="how-to-use-rhai" class="anchor" href="#how-to-use-rhai" aria-hidden="true"><span class="octicon octicon-link"></span></a>How to use RHAI</h3>
+
+<p>To execute RHAI engine, run </p>
+
+<pre><code>java -jar bin/rhai.jar
+</code></pre>
+
+<p>and add required arguments. General usage has this shape:</p>
+
+<pre><code>&lt;option-id&gt; &lt;option-args&gt; &lt;command&gt; &lt;routine-id&gt; &lt;routine-args&gt;
+</code></pre>
+
+<p>To know the set of available options and commands, run </p>
+
+<pre><code>java -jar bin/rhai.jar --help
+</code></pre>
+
+<p>To know the set of available routines for a certain command, run </p>
+
+<pre><code>java -jar bin/rhai.jar $command -help
+</code></pre>
+
+<p>For example, with command --trainer, this is the result:</p>
+
+<pre><code>[ command --trainer with option -help started, mar 15 09 2015 18:35 ]
+Welcome to RHAI training system
+Theese are the available routines:
+----------
+option: -l , -ld , -load
+description: loads fingerprints from a directory
+required args: a dataset directory
+----------
+option: -o , -optimize
+description: computes the best acceptance likelihood
+required args: a real dataset , a fake dataset
+----------
+option: -h , -man , -help
+description: prints a simple help
+required args: 
+----------
+[ process terminated in about 0,00 seconds ]
+</code></pre>
+
+<h5>
+<a id="changing-abstraction-time-not-recommended" class="anchor" href="#changing-abstraction-time-not-recommended" aria-hidden="true"><span class="octicon octicon-link"></span></a>Changing abstraction time (<em>not recommended</em>)</h5>
+
+<p>RHAI works by abstracting the measures read from input files in a high-level
+label, in order to smooth data and improve performances. The abstraction time
+parameter is the number of seconds that are to be abstracted into one single
+label. The default value is set to 20 seconds, but you can change it. Please
+note that values too much smaller than default will cause problems with the
+sampling time of the input files (tests were run till t_abs ~ 10 * t_sampl) and
+will result in a higher computation time, but values too much bigger than default
+will decrease identification performance and will cause problems with small-duration
+appliances (like, for example, microwave). To change this parameter you simply have 
+to edit the relative value in the properties file rhai_data/settings/abstraction.properties.</p>
+
+<h5>
+<a id="changing-acceptance-threeshold" class="anchor" href="#changing-acceptance-threeshold" aria-hidden="true"><span class="octicon octicon-link"></span></a>Changing acceptance threeshold</h5>
+
+<p>RHAI will always identify the appliance of the library set that better fits the
+given data file. That means it identifies even meaningless noise as an appliance.
+To change this behavior, you can edit the acceptance threeshold parameter in the
+rhai_data/settings/identification.properties file. This value can go from 0 (inclusive)
+to 1 (exclusive). When 0, the engine will identify anything as an appliance. When 1, 
+no appliance will be identified (null will then be returned). Since the perfect parameter
+changes as the library dataset changes, there is no general rule to choose that value.
+To determine the best one, you use the optimization routine available within RHAI.
+First, you need to load your training dataset to teach RHAI what shape your applainces have;
+to do this, just run:</p>
+
+<pre><code>java -jar bin/rhai.jar --trainer -load $training_data
+</code></pre>
+
+<p>and wait for the dataset to be completely loaded. Then run: </p>
+
+<pre><code>java -jar bin/rhai.jar --trainer -optimize $real_data $fake_data
+</code></pre>
+
+<p>where </p>
+
+<ul>
+<li><p>$training_data is a dataset of real appliances used for learning. You should use rhai_dataset/training</p></li>
+<li><p>$real_data is a dataset of real appliances. You should use rhai_dataset/validation. Do not use rhai_dataset/training</p></li>
+<li><p>$fake_data is a dataset of fake appliances. You should use rhai_dataset/fake</p></li>
+</ul>
+
+<p>Since for decent-size datasets this computation may require a lot of time, we suggest
+the use of --save option, to print the output in a persistent file. Run this:</p>
+
+<pre><code>java -jar bin/rhai.jar --save $output_file --trainer -optimize $real_data $fake_data
+</code></pre>
+
+<p>As the computation goes on, you should see something like this in your terminal:</p>
+
+<pre><code>[ command --trainer with option -optimize started, mar 15 09 2015 18:38 ]
+        25%        50%        75%       100%
+===============================
+</code></pre>
+
+<p>Once finished, you get the value that better recognize real appliances <em>and</em> reject fake ones.
+Now simply edit the .properties file by updating the value with the new one.</p>
+
+<h3>
+<a id="credits" class="anchor" href="#credits" aria-hidden="true"><span class="octicon octicon-link"></span></a>Credits</h3>
+
+<p>RHAI is a project developed by Simone Colucci within the Laboratory
+of Robotics at the University of Pavia. Latest version of the source 
+can be found at the GitHub repository, at <a href="https://github.com/simone3991/rhai">https://github.com/simone3991/rhai</a>.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/simone3991">simone3991</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
